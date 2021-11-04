@@ -8,6 +8,7 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 import { BorrarUsuarioComponent } from './components/borrar-usuario/borrar-usuario.component';
 import { SharedModule } from '@shared/shared.module';
 import { UsuarioService } from './shared/service/usuario.service';
+import { LayoutUsuarioComponent } from './components/layout-usuario/layout-usuario.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { UsuarioService } from './shared/service/usuario.service';
     CrearUsuarioComponent,
     ListarUsuarioComponent,
     BorrarUsuarioComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    LayoutUsuarioComponent
   ],
   imports: [  
     UsuarioRoutingModule,

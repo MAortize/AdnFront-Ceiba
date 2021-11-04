@@ -12,10 +12,9 @@ import { UsuarioService } from '@usuario/shared/service/usuario.service';
 export class ListarUsuarioComponent implements OnInit {
   public listaUsuarios: Usuario[]=[];
 
-  constructor(protected usuarioService: UsuarioService) { console.log("hola"); }
+  constructor(protected usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
-    //this.listaUsuarios = this.usuarioService.consultar();
     this.listarUsuarios();
     
   }

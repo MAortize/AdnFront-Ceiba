@@ -1,1 +1,21 @@
-<p>crear-usuario works!</p>
+<div class="container">
+    <form [formGroup]='forma' (ngSubmit)="crear()" autocomplete="off">
+        <div class="form-row padre">
+            <div class="col-md-6 mb-3">
+                <label for="nombreUsuario">Nombre</label>
+                <input type="text" class="form-control" name="nombreUsuario" id="nombreUsuario" formControlName="nombre" [class.is-invalid]="nombreNoValido">
+                <small *ngIf="nombreNoValido" class="text-danger">El nombre debe ser ingresado</small>
+            </div>
+        </div>
+        <div class="form-row padre">
+            <div class="col-md-6 mb-3">
+                <label for="nombreUsuario">Correo</label>
+                <input formControlName="correo" type="email" class="form-control" name="correoElectronico" id="correoElectronico" [class.is-invalid]="correoNoValido">
+                <small *ngIf="correoNoValido" class="text-danger">El correo debe ser ingresado</small>
+            </div>
+        </div>
+        <div class="mx-auto" style="width: 200px;">
+            <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+        </div>
+    </form>
+</div>

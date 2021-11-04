@@ -36,6 +36,9 @@
       "@usuario/*":[
         "src/app/feature/usuario/*"
       ],
+      "@reserva/*":[
+        "src/app/feature/reserva/*"
+      ],
       "@shared/*": [
         "src/app/shared/*"
       ],

@@ -14,6 +14,10 @@ export class UsuarioService {
     return this.http.doGet<Usuario[]>(`${URL}`, this.http.optsName('Listar Usuarios'));
   }
 
+  public crear(usuario: Usuario){
+    return this.http.doPost(`${URL}`,usuario)
+  }
+
 
 }
   

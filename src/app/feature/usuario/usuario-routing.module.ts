@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
+import { LayoutUsuarioComponent } from './components/layout-usuario/layout-usuario.component';
 import { ListarUsuarioComponent } from './components/listar-usuario/listar-usuario.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 
@@ -8,16 +9,11 @@ import { UsuarioComponent } from './components/usuario/usuario.component';
 const routes: Routes = [
   {
     path: '',
-    component: UsuarioComponent,
+    component: LayoutUsuarioComponent,
     children: [
-      {
-        path:'crear',
-        component: CrearUsuarioComponent
-      },
-      {
-        path:'listar',
-        component: ListarUsuarioComponent
-      }
+      { path: '',component: UsuarioComponent},
+      {path:'crear',component: CrearUsuarioComponent},
+      {path:'listar',component: ListarUsuarioComponent},
     ]
   }
 ];
@@ -27,3 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class UsuarioRoutingModule { }
+

@@ -6,25 +6,33 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from '@home/home.component';
 import { ProductoModule } from '@producto/producto.module';
 import { UsuarioModule } from '@usuario/usuario.module';
+import { ReservaModule } from '@reserva/reserva.module';
 
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+import { TrmComponent } from './feature/trm/trm.component';
+import { DatePipe } from '@angular/common';
+import { TrmService } from './feature/trm/services/trm.service';
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    TrmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ProductoModule,
     UsuarioModule,
+    ReservaModule,
     CoreModule
   ],
-  providers: [CookieService],
+  providers: [TrmService,CookieService, DatePipe],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

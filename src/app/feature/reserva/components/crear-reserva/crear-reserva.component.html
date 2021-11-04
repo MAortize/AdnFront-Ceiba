@@ -1,0 +1,43 @@
+<div class="container">
+    <form [formGroup]='formaReserva' (ngSubmit)="agregar()" autocomplete="off">
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="pelicula">Pelicula a reservar</label>
+                <input type="text" class="form-control is-valid" id="pelicula" name="pelicula" placeholder={{nombrePelicula}} disabled>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="codigo">Codigo Reserva</label>
+                <input type="text" class="form-control is-valid" id="codigo" name="codigo" placeholder={{codigoReserva}} disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-6 mb-3">
+                <label for="tipoCarro">Tipo carro</label>
+                <select formControlName="tipoCarro" class="custom-select" id="tipoCarro" name="tipoCarro" [class.is-invalid]="tipoCarroNoValido">
+                    <option selected>Selecciona el tipo de carro</option>
+                    <option value="Automovil">Automovil</option>
+                    <option value="Camioneta">Camioneta</option>
+                  </select>
+                <small *ngIf="tipoCarroNoValido" class="text-danger">El tipo de carro debe ser seleccionado</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="fechaReserva">Fecha de la reserva</label>
+                <input formControlName="fechaReserva" class="form-control" type="date" id="fechaReserva" name="fechaReserva" [class.is-invalid]="fechaReservaNoValido">
+                <small *ngIf="fechaReservaNoValido" class="text-danger">La fecha de reserva debe ser seleccionada</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="horaReserva">Hora de la reserva</label>
+                <input formControlName="horaReserva" class="form-control" type="time" id="horaReserva" name="horaReserva" [class.is-invalid]="horaReservaNoValido">
+                <small *ngIf="horaReservaNoValido" class="text-danger">La hora de la reserva debe ser seleccionada</small>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="idUsuario">Usuario</label>
+                <select formControlName="nombreUsuario" class="custom-select" name="idUsuario" id="idUsuario" [class.is-invalid]="nombreUsuarioNoValido">
+                    <option *ngFor="let item of listaUsuarios" [value]="item.idUsuario">{{item.nombre}}</option>
+                </select>
+                <small *ngIf="nombreUsuarioNoValido" class="text-danger">El nombre del usuario debe ser seleccionado</small>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+    </form>
+</div>
