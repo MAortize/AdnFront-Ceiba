@@ -9,6 +9,7 @@ import { BorrarUsuarioComponent } from './components/borrar-usuario/borrar-usuar
 import { SharedModule } from '@shared/shared.module';
 import { UsuarioService } from './shared/service/usuario.service';
 import { LayoutUsuarioComponent } from './components/layout-usuario/layout-usuario.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,9 @@ import { LayoutUsuarioComponent } from './components/layout-usuario/layout-usuar
   ],
   imports: [
     UsuarioRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UsuarioService]
 })

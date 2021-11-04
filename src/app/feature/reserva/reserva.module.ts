@@ -8,6 +8,7 @@ import { ListarReservasComponent } from './components/listar-reservas/listar-res
 import { SharedModule } from '@shared/shared.module';
 import { ReservaService } from './shared/service/reserva.service';
 import { LayoutReservaComponent } from './components/layout-reserva/layout-reserva.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { LayoutReservaComponent } from './components/layout-reserva/layout-reser
   ],
   imports: [
     ReservaRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ReservaService]
 })
