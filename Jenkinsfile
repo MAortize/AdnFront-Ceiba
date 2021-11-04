@@ -61,12 +61,12 @@ pipeline {
     //   }
     // }
 
-    stage('Lint') {
-      steps {
-          echo "------------>Lint<------------"
-          sh 'npm run lint'
-        }
-      }
+    // stage('Lint') {
+    //   steps {
+    //       echo "------------>Lint<------------"
+    //       sh 'npm run lint'
+    //     }
+    //   }
 
 
     stage('Static Code Analysis') {
