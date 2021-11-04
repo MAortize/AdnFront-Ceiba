@@ -7,7 +7,7 @@ import { Usuario } from '@shared/model/usuario';
 import { UsuarioService } from '@usuario/shared/service/usuario.service';
 
 
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -88,10 +88,17 @@ export class CrearReservaComponent implements OnInit {
     this.servicioReserva.crearReserva(new Reserva(this.codigoReserva,this.nombrePelicula,this.formaReserva.value.fechaReserva,
                                       this.formaReserva.value.horaReserva,this.formaReserva.value.nombreUsuario,this.formaReserva.value.tipoCarro)).subscribe(data=> {
         console.log(data);
-        swal("Se creo la reserva satisfactoriamente con el id",data['valor'].toString(),"success");
+        Swal.fire({
+          title: 'Se creo la reserva con el id',
+          text: data['valor'].toString(),
+          icon: 'success'
+        })
+        //("Se creo la reserva satisfactoriamente con el id",data['valor'].toString(),"success");
         this.generarAleatorio()
     }, e => {
-        swal(e.error.mensaje,'',"error");
+        Swal.fire({title: e.error.mensaje,
+          text: '',
+          icon: "error"});
     })
 
     this.formaReserva.reset();

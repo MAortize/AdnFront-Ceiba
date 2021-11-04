@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from '@shared/model/usuario';
 import { UsuarioService } from '@usuario/shared/service/usuario.service';
 
-import swal from 'sweetalert';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-crear-usuario',
@@ -51,7 +51,7 @@ export class CrearUsuarioComponent implements OnInit {
       console.log(data);
       this.nombreUsuario=null;
       this.correoElectronico=null;
-      swal("El id del usuario es ",data['valor'].toString())
+      Swal.fire({title:"El id del usuario es ",text:data['valor'].toString()})
 
     })
 
