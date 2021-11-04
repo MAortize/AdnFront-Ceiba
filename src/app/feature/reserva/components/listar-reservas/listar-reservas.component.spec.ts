@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpService } from '@core/services/http.service';
+import { ReservaService } from '@reserva/shared/service/reserva.service';
 
 import { ListarReservasComponent } from './listar-reservas.component';
 
@@ -8,7 +11,9 @@ describe('ListarReservasComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListarReservasComponent ]
+      declarations: [ ListarReservasComponent ],
+      imports: [ HttpClientTestingModule ],
+      providers: [ReservaService, HttpService]
     })
     .compileComponents();
   });

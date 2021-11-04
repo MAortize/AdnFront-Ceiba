@@ -1,4 +1,7 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpService } from '@core/services/http.service';
+import { UsuarioService } from '@usuario/shared/service/usuario.service';
 
 import { ListarUsuarioComponent } from './listar-usuario.component';
 
@@ -8,7 +11,9 @@ describe('ListarUsuarioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListarUsuarioComponent ]
+      declarations: [ ListarUsuarioComponent ],
+      imports: [HttpClientTestingModule],
+      providers: [UsuarioService, HttpService],
     })
     .compileComponents();
   });

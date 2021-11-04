@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from '@core/services/http.service';
 //import { Reserva } from '@reserva/shared/model/reserva';
 import { ReservaService } from '@reserva/shared/service/reserva.service';
+import { UsuarioService } from '@usuario/shared/service/usuario.service';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
 import { CrearReservaComponent } from './crear-reserva.component';
@@ -24,7 +25,7 @@ describe('CrearReservaComponent', () => {
         AppRoutingModule,
         ReactiveFormsModule,
         FormsModule],
-      providers: [ReservaService, HttpService]
+      providers: [ReservaService, HttpService, UsuarioService]
     })
     .compileComponents();
   });
@@ -40,11 +41,4 @@ describe('CrearReservaComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`Comprobar que el titulo sea 'Recuerda ingresar todos los datos para poder crear la reserva ^-^'`, () => {
-    expect(component.titulo).toEqual('Recuerda ingresar todos los datos para poder crear la reserva ^-^');
-  })
-
-  it('Invalidar el formulario si esta vacio', () => {
-    expect(component.formaReserva.valid).toBeFalsy();
-  })
 });

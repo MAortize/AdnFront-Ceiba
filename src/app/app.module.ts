@@ -4,7 +4,6 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from '@home/home.component';
-import { ProductoModule } from '@producto/producto.module';
 import { UsuarioModule } from '@usuario/usuario.module';
 import { ReservaModule } from '@reserva/reserva.module';
 
@@ -27,7 +26,6 @@ import { TrmService } from './feature/trm/services/trm.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProductoModule,
     UsuarioModule,
     ReservaModule,
     CoreModule
