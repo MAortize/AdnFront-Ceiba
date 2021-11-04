@@ -9,6 +9,7 @@ import { SharedModule } from '@shared/shared.module';
 import { ReservaService } from './shared/service/reserva.service';
 import { LayoutReservaComponent } from './components/layout-reserva/layout-reserva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsuarioService } from '@usuario/shared/service/usuario.service';
 
 
 @NgModule({
@@ -24,6 +25,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ReservaService]
+  providers: [ReservaService, UsuarioService]
 })
 export class ReservaModule { }
