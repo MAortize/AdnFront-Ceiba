@@ -9,19 +9,19 @@ import { ReservaService } from '@reserva/shared/service/reserva.service';
   ]
 })
 export class ListarReservasComponent implements OnInit {
-  public listaReserva: Reserva[]=[];
+  public listaReserva: Reserva[] = [];
 
   constructor(protected reservaService: ReservaService) { }
 
   ngOnInit(): void {
-    this.listarReserva()
+    this.listarReserva();
   }
 
   listarReserva(){
     this.reservaService.consultaReserva().subscribe(data => {
       console.log(data);
-      this.listaReserva=data;
-    })
+      this.listaReserva = data;
+    });
   }
 
 }

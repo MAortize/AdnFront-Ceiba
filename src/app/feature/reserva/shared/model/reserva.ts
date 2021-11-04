@@ -10,16 +10,13 @@ export class Reserva{
     tipoCarro: string;
     tarifa: number;
     idUsuarioReserva: number;
-    constructor(codigo:string, pelicula:string,fechaReserva:string,horaReserva:string,idUsuario:number, tipoCarro:string){
-      
-        this.codigo=codigo;
-        this.pelicula=pelicula
-        this.fechaReserva=fechaReserva
-        this.horaReserva=horaReserva;
-        this.idUsuarioReserva=idUsuario;
-        this.noPuesto=0;
-        this.tipoCarro=tipoCarro;
-
+    constructor(codigo: string, pelicula: string, fechaReserva: string, horaReserva: string, idUsuario: number, tipoCarro: string){
+        this.codigo = codigo;
+        this.pelicula = pelicula;
+        this.fechaReserva = fechaReserva;
+        this.horaReserva = horaReserva;
+        this.idUsuarioReserva = idUsuario;
+        this.noPuesto = 0;
+        this.tipoCarro = tipoCarro;
     }
-
 }

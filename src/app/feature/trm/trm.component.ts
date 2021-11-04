@@ -18,7 +18,7 @@ export class TrmComponent implements OnInit {
   public trmActual: Observable<Trm[]>;
 
   ngOnInit(): void {
-    this.obtenerTrmActualColombia()
+    this.obtenerTrmActualColombia();
   }
 
   obtenerTrmActualColombia() {

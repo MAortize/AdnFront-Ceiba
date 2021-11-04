@@ -3,7 +3,7 @@ import { HttpService } from '@core/services/http.service';
 import { environment } from 'src/environments/environment';
 import { Usuario } from '../../../../shared/model/usuario';
 
-const URL = environment.endpoint + '/usuarios'
+const URL = environment.endpoint + '/usuarios';
 
 @Injectable()
 export class UsuarioService {
@@ -15,9 +15,6 @@ export class UsuarioService {
   }
 
   public crear(usuario: Usuario){
-    return this.http.doPost(`${URL}`,usuario)
+    return this.http.doPost(`${URL}`, usuario);
   }
-
-
 }
-  

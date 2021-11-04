@@ -6,15 +6,13 @@ import { ListarReservasComponent } from './components/listar-reservas/listar-res
 import { ReservaComponent } from './components/reserva/reserva.component';
 
 const routes: Routes = [{
-  path:'',
+  path: '',
   component: LayoutReservaComponent,
   children: [
-    { path: '', component:ReservaComponent},
-    { path: 'crearReserva/:nombre', component:CrearReservaComponent},
-    { path: 'listar', component:ListarReservasComponent},
+    { path: '', component: ReservaComponent},
+    { path: 'crearReserva/:nombre', component: CrearReservaComponent},
+    { path: 'listar', component: ListarReservasComponent},
   ]
-  
-  
 }];
 
 @NgModule({

@@ -10,38 +10,26 @@ import { ReservaService } from '../../shared/service/reserva.service';
 })
 export class ReservaComponent implements OnInit {
 
-  public peliculas : any[]=[];
+  public peliculas: any[] = [];
+  titulo = 'Para crear una reserva da click en el poster de la pelicula que quieras ^-^';
 
   constructor(protected reservaService: ReservaService, private router: Router) { }
 
   ngOnInit(): void {
-    this.mostrarPeliculas()
+    this.mostrarPeliculas();
   }
 
 
   mostrarPeliculas(){
-    this.reservaService.consultaPelicula().subscribe((data:any)=>{
-      console.log(data.results);
-      this.peliculas=data.results;
-    })
-  
+    this.reservaService.consultaPelicula().subscribe((data: any) => {
+      this.peliculas = data.results;
+    });
   }
 
 
-  crearReserva(item:any){
+  crearReserva(item: any){
     let nombrePelicula;
-
-    
-    
-    
-    nombrePelicula=item.title;
-        
-    console.log(nombrePelicula);
-
-    this.router.navigate(['reserva/crearReserva', nombrePelicula])
-    
-
-
+    nombrePelicula = item.title;
+    this.router.navigate(['reserva/crearReserva', nombrePelicula]);
   }
-
 }

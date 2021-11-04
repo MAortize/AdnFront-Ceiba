@@ -11,10 +11,7 @@ export class AppComponent {
   title = 'app-base';
   public companies: MenuItem[] = [
     { url: '/home', nombre: 'home' },
-    { url: '/usuario', nombre:'usuario'},
-    { url: '/reserva', nombre:'reserva'}
-    
+    { url: '/usuario', nombre: 'usuario' },
+    { url: '/reserva', nombre: 'reserva' }
   ];
-
-  
 }

@@ -32,7 +32,7 @@ import { TrmService } from './feature/trm/services/trm.service';
     ReservaModule,
     CoreModule
   ],
-  providers: [TrmService,CookieService, DatePipe],
+  providers: [TrmService, CookieService, DatePipe],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

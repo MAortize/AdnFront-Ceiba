@@ -1,3 +1,4 @@
+<h2 id="tituloCrearReserva">{{titulo}}</h2>
 <div class="container">
     <form [formGroup]='formaReserva' (ngSubmit)="agregar()" autocomplete="off">
         <div class="form-row">
@@ -15,8 +16,8 @@
                 <label for="tipoCarro">Tipo carro</label>
                 <select formControlName="tipoCarro" class="custom-select" id="tipoCarro" name="tipoCarro" [class.is-invalid]="tipoCarroNoValido">
                     <option selected>Selecciona el tipo de carro</option>
-                    <option value="Automovil">Automovil</option>
-                    <option value="Camioneta">Camioneta</option>
+                    <option value="AUTOMOVIL">Automovil</option>
+                    <option value="CAMIONETA">Camioneta</option>
                   </select>
                 <small *ngIf="tipoCarroNoValido" class="text-danger">El tipo de carro debe ser seleccionado</small>
             </div>
@@ -38,6 +39,7 @@
                 <small *ngIf="nombreUsuarioNoValido" class="text-danger">El nombre del usuario debe ser seleccionado</small>
             </div>
         </div>
-        <button class="btn btn-primary btn-block" type="submit">Enviar</button>
+        <button [disabled]="!formaReserva.valid" class="btn btn-success btn-block" type="submit">Crear reserva</button>
     </form>
+    <button (click)="volver()" class="btn btn-danger mt-3">Ver peliculas <- </button>
 </div>

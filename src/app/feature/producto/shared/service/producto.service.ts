@@ -3,7 +3,7 @@ import { HttpService } from '@core-service/http.service';
 import { environment } from 'src/environments/environment';
 import { Producto } from '../model/producto';
 
-const URL = environment.endpoint + '/reserva'
+const URL = environment.endpoint + '/reserva';
 
 
 @Injectable()

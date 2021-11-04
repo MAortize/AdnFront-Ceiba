@@ -8,7 +8,6 @@ import { ProductoComponent } from './components/producto/producto.component';
 import { SharedModule } from '@shared/shared.module';
 import { ProductoService } from './shared/service/producto.service';
 
-//C:\Users\miguel.ortiz\Downloads\frontcinema\angular-base\src\app\feature
 @NgModule({
   declarations: [
     CrearProductoComponent,

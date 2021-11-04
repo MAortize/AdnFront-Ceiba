@@ -11,9 +11,9 @@ const routes: Routes = [
     path: '',
     component: LayoutUsuarioComponent,
     children: [
-      { path: '',component: UsuarioComponent},
-      {path:'crear',component: CrearUsuarioComponent},
-      {path:'listar',component: ListarUsuarioComponent},
+      { path: '', component: UsuarioComponent},
+      {path: 'crear', component: CrearUsuarioComponent},
+      {path: 'listar', component: ListarUsuarioComponent},
     ]
   }
 ];

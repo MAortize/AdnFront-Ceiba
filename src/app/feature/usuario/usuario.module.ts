@@ -19,7 +19,7 @@ import { LayoutUsuarioComponent } from './components/layout-usuario/layout-usuar
     UsuarioComponent,
     LayoutUsuarioComponent
   ],
-  imports: [  
+  imports: [
     UsuarioRoutingModule,
     SharedModule
   ],
