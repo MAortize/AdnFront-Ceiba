@@ -27,7 +27,6 @@ export class CrearReservaComponent implements OnInit {
   protected servicioReserva: ReservaService, private fb: FormBuilder, private route: Router) { this.crearFormReactiveReserva(); }
   ngOnInit(): void {
     this.router.params.subscribe(params => {
-      console.log(params['nombre']);
       this.nombrePelicula = params['nombre'];
       this.generarAleatorio();
     });
@@ -90,8 +89,9 @@ export class CrearReservaComponent implements OnInit {
 
   generarAleatorio(){
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const parada = 6;
     this.codigoReserva = '';
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < parada; i++) {
       this.codigoReserva += characters.charAt(Math.floor(Math.random() * characters.length));
     }
   }

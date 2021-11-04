@@ -19,7 +19,6 @@ export class ListarReservasComponent implements OnInit {
 
   listarReserva(){
     this.reservaService.consultaReserva().subscribe(data => {
-      console.log(data);
       this.listaReserva = data;
     });
   }

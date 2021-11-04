@@ -13,8 +13,8 @@ import Swal from 'sweetalert2';
 })
 export class CrearUsuarioComponent implements OnInit {
 
-  nombreUsuario: any;
-  correoElectronico: any;
+  nombreUsuario: string;
+  correoElectronico: string;
 
   forma: FormGroup;
 
