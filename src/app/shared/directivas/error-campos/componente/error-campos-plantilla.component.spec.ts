@@ -23,4 +23,5 @@ describe('ErrorCamposPlantillaComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
 });
