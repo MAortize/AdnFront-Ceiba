@@ -66,11 +66,6 @@ export class CrearReservaComponent implements OnInit {
   }
 
   agregar(){
-    if (this.formaReserva.invalid) {
-      return  Object.values(this.formaReserva.controls).forEach(control => {
-        control.markAsTouched();
-      });
-    }
     this.servicioReserva.crearReserva(new Reserva(this.codigoReserva, this.nombrePelicula, this.formaReserva.value.fechaReserva,
     this.formaReserva.value.horaReserva, this.formaReserva.value.nombreUsuario, this.formaReserva.value.tipoCarro)).subscribe(data => {
         Swal.fire({
