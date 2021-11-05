@@ -32,11 +32,6 @@ export class CrearUsuarioComponent implements OnInit {
 
 
   crear(){
-    if (this.forma.invalid) {
-      return  Object.values(this.forma.controls).forEach(control => {
-        control.markAsTouched();
-      });
-    }
     this.servicioUsuario.crear(new Usuario(this.forma.value.nombre, this.forma.value.correo)).subscribe(data => {
       Swal.fire({ title: 'El id del usuario es', text: data['valor'].toString() });
     });
