@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { async } from 'rxjs';
 
 import { ErrorCamposPlantillaComponent } from './error-campos-plantilla.component';
 
@@ -6,12 +7,12 @@ describe('ErrorCamposPlantillaComponent', () => {
   let component: ErrorCamposPlantillaComponent;
   let fixture: ComponentFixture<ErrorCamposPlantillaComponent>;
 
-  beforeEach(waitForAsync(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
       declarations: [ ErrorCamposPlantillaComponent ]
     })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ErrorCamposPlantillaComponent);
