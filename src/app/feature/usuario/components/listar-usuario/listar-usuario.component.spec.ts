@@ -10,11 +10,11 @@ import { ListarUsuarioComponent } from './listar-usuario.component';
 describe('ListarUsuarioComponent', () => {
   let component: ListarUsuarioComponent;
   let fixture: ComponentFixture<ListarUsuarioComponent>;
-  let usuarioService: UsuarioService
+  let usuarioService: UsuarioService;
   const listUsuaios: Usuario[] = [
     new Usuario('Miguel', 'ortiz.eche@gmail.com'),
     new Usuario('Alejandro', 'xd.eche@gmail.com')
-  ]
+  ];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -31,11 +31,11 @@ describe('ListarUsuarioComponent', () => {
     usuarioService = TestBed.inject(UsuarioService);
     spyOn(usuarioService, 'consultar').and.returnValue(
       of(listUsuaios)
-    )
+    );
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });  
+  });
 });

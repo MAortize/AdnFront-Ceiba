@@ -4,7 +4,7 @@
 </div>
 <div class="container mt-3">
     <div class="row row-cols-1 row-cols-md-3 animated fadeIn">
-        <div (click)="crearReserva(items)" *ngFor="let items of peliculas" class="col mb-4">
+        <div id="crearReserva" (click)="crearReserva(items)" *ngFor="let items of peliculas" class="col mb-4">
             <div class="card puntero">
                 <img [src]='"https://image.tmdb.org/t/p/w500"+items.poster_path' class="card-img-top" alt="...">
                 <div class="card-body">

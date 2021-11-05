@@ -34,12 +34,12 @@ describe('CrearUsuarioComponent', () => {
   });
 
 
-  it('Crear usuario', () =>{
+  it('Crear usuario', () => {
     component.forma.controls.nombre.setValue(detalleUsuario.nombre);
     component.forma.controls.correo.setValue(detalleUsuario.correo);
     expect(component.forma.valid).toBeTruthy();
     const spy = spyOn(usuarioService, 'crear').and.callThrough();
-    component.crear()
+    component.crear();
     expect(spy).toHaveBeenCalled();
-  })
+  });
 });

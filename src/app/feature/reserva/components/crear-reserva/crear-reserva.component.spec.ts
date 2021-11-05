@@ -16,7 +16,7 @@ describe('CrearReservaComponent', () => {
   let fixture: ComponentFixture<CrearReservaComponent>;
   let reservaService: ReservaService;
   let usuarioService: UsuarioService;
-  const detalleReserva = new Reserva('aa','peliPrueba','2021-11-04','11:37:00',1,'CAMIONETA');
+  const detalleReserva = new Reserva('aa', 'peliPrueba', '2021-11-04', '11:37:00', 1, 'CAMIONETA');
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -45,7 +45,7 @@ describe('CrearReservaComponent', () => {
   });
 
   it(`Comprobar que el titulo sea 'Recuerda ingresar todos los datos para poder crear la reserva ^-^'`, () => {
-    expect(component.titulo).toEqual('Recuerda ingresar todos los datos para poder crear la reserva ^-^')
+    expect(component.titulo).toEqual('Recuerda ingresar todos los datos para poder crear la reserva ^-^');
   });
 
   it('formulario es invalido cuando esta vacio', () => {
@@ -53,18 +53,14 @@ describe('CrearReservaComponent', () => {
   });
 
   it('Crear reserva', () => {
-    component.formaReserva.controls.tipoCarro.setValue(detalleReserva.tipoCarro)
-    component.formaReserva.controls.fechaReserva.setValue(detalleReserva.fechaReserva)
-    component.formaReserva.controls.horaReserva.setValue(detalleReserva.horaReserva)
-    component.formaReserva.controls.nombreUsuario.setValue(detalleReserva.idUsuarioReserva)
+    component.formaReserva.controls.tipoCarro.setValue(detalleReserva.tipoCarro);
+    component.formaReserva.controls.fechaReserva.setValue(detalleReserva.fechaReserva);
+    component.formaReserva.controls.horaReserva.setValue(detalleReserva.horaReserva);
+    component.formaReserva.controls.nombreUsuario.setValue(detalleReserva.idUsuarioReserva);
     expect(component.formaReserva.valid).toBeTruthy();
-    
     const spy = spyOn(reservaService, 'crearReserva').and.callThrough();
     spyOn(usuarioService, 'consultar').and.returnValue(of([]));
-    component.agregar()
+    component.agregar();
     expect(spy).toHaveBeenCalled();
-    
-    
-  })
-
+  });
 });

@@ -11,7 +11,7 @@ import { TrmComponent } from './trm.component';
 describe('TrmComponent', () => {
   let component: TrmComponent;
   let fixture: ComponentFixture<TrmComponent>;
-  let trmService : TrmService;
+  let trmService: TrmService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
