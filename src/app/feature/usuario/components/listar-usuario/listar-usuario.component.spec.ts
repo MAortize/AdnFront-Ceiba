@@ -37,5 +37,5 @@ describe('ListarUsuarioComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  });  
 });
