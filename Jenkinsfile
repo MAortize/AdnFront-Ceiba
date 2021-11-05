@@ -54,12 +54,12 @@ pipeline {
       }
     }
 
-    // stage('Test') {
-    //   steps{
-    //     echo "------------>Test<------------"
-    //     sh 'npm run test -- --watch=false --browsers ChromeHeadless'
-    //   }
-    // }
+    stage('Test') {
+      steps{
+        echo "------------>Test<------------"
+        sh 'npm run test -- --watch=false --browsers ChromeHeadless'
+      }
+    }
 
     // stage('Lint') {
     //   steps {

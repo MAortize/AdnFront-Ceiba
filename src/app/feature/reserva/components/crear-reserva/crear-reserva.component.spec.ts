@@ -59,9 +59,9 @@ describe('CrearReservaComponent', () => {
     component.formaReserva.controls.nombreUsuario.setValue(detalleReserva.idUsuarioReserva)
     expect(component.formaReserva.valid).toBeTruthy();
     
-    const spy = spyOn(reservaService, 'crearReserva').and.returnValue(of(true));
+    const spy = spyOn(reservaService, 'crearReserva').and.callThrough();
     spyOn(usuarioService, 'consultar').and.returnValue(of([]));
-    component.agregar();
+    component.agregar()
     expect(spy).toHaveBeenCalled();
     
     
