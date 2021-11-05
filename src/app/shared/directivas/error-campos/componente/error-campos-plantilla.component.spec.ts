@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { async } from 'rxjs';
+import { ComponentFixture, TestBed} from '@angular/core/testing';
+
 
 import { ErrorCamposPlantillaComponent } from './error-campos-plantilla.component';
 
