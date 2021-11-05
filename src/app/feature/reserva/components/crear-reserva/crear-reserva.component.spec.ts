@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpService } from '@core/services/http.service';
@@ -15,6 +15,7 @@ describe('CrearReservaComponent', () => {
   let component: CrearReservaComponent;
   let fixture: ComponentFixture<CrearReservaComponent>;
   let reservaService: ReservaService;
+  let usuarioService: UsuarioService;
   const detalleReserva = new Reserva('aa','peliPrueba','2021-11-04','11:37:00',1,'CAMIONETA');
 
   beforeEach(async () => {
@@ -22,7 +23,7 @@ describe('CrearReservaComponent', () => {
       declarations: [ CrearReservaComponent ],
       imports: [
         CommonModule,
-        HttpClientModule,
+        HttpClientTestingModule,
         AppRoutingModule,
         ReactiveFormsModule,
         FormsModule],
@@ -35,6 +36,7 @@ describe('CrearReservaComponent', () => {
     fixture = TestBed.createComponent(CrearReservaComponent);
     component = fixture.componentInstance;
     reservaService = TestBed.inject(ReservaService);
+    usuarioService = TestBed.inject(UsuarioService);
     fixture.detectChanges();
   });
 
@@ -58,8 +60,10 @@ describe('CrearReservaComponent', () => {
     expect(component.formaReserva.valid).toBeTruthy();
     
     const spy = spyOn(reservaService, 'crearReserva').and.returnValue(of(true));
+    spyOn(usuarioService, 'consultar').and.returnValue(of([]));
     component.agregar();
     expect(spy).toHaveBeenCalled();
+    
     
   })
 
