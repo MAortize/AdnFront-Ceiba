@@ -45,11 +45,11 @@ describe('CrearReservaComponent', () => {
     reservaService = TestBed.inject(ReservaService);
     spyOn(reservaService, 'crearReserva').and.returnValue(
       of(true)
-    )
+    );
     usuarioService = TestBed.inject(UsuarioService);
     spyOn(usuarioService, 'consultar').and.returnValue(
       of(listUsuaios)
-    )
+    );
     fixture.detectChanges();
   });
 
@@ -71,12 +71,8 @@ describe('CrearReservaComponent', () => {
     component.formaReserva.controls.horaReserva.setValue(detalleReserva.horaReserva);
     component.formaReserva.controls.nombreUsuario.setValue(detalleReserva.idUsuarioReserva);
     expect(component.formaReserva.valid).toBeTruthy();
-  
     component.agregar();
 
     expect(component.notificacion).toBeTruthy();
-    
-    
   });
 });
-  

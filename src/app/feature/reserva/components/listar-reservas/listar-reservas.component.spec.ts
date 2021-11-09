@@ -14,7 +14,7 @@ describe('ListarReservasComponent', () => {
   const listReservas: Reserva[] = [
     new Reserva('aa', 'peliPrueba', '2021-11-04', '11:37:00', 1, 'CAMIONETA'),
     new Reserva('aa', 'peliPrueba', '2021-11-04', '11:37:00', 2, 'AUTOMOVIL')
-  ]
+  ];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -38,7 +38,7 @@ describe('ListarReservasComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
     component.listaReserva.subscribe(resultado => {
-      expect(2).toBe(resultado.length)
-    })
+      expect(2).toBe(resultado.length);
+    });
   });
 });

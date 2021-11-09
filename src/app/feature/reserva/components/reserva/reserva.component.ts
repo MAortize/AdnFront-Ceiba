@@ -8,12 +8,9 @@ import { ReservaService } from '../../shared/service/reserva.service';
   ]
 })
 export class ReservaComponent implements OnInit {
-
-  
   titulo = 'Para crear una reserva da click en el poster de la pelicula que quieras ^-^';
   constructor(protected reservaService: ReservaService) { }
 
   ngOnInit(): void {
-    
   }
 }

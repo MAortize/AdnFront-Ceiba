@@ -18,10 +18,10 @@ describe('ReservaService', () => {
       ReservaService, HttpService
     ],
   imports: [HttpClientTestingModule]});
-    httpMock = injector.inject(HttpTestingController)
+    httpMock = injector.inject(HttpTestingController);
     service = TestBed.inject(ReservaService);
   });
-  
+
   it('should be created', () => {
     const reservaService: ReservaService = TestBed.inject(ReservaService);
     expect(reservaService).toBeTruthy();
@@ -29,7 +29,7 @@ describe('ReservaService', () => {
 
   it('deberia listar reservas', () => {
     const dummyReserva = [
-      new Reserva('ABC','Pelicula1','2021-11-11','12:00:00',1,'AUTOMOVIL')
+      new Reserva('ABC', 'Pelicula1', '2021-11-11', '12:00:00', 1, 'AUTOMOVIL')
     ];
     service.consultaReserva().subscribe(reservas => {
       expect(reservas.length).toBe(1);
@@ -41,13 +41,13 @@ describe('ReservaService', () => {
   });
 
   it('deberia crear reserva', () => {
-    const dummyReserva = new Reserva('ABC','Pelicula1','2021-11-11','12:00:00',1,'AUTOMOVIL');
+    const dummyReserva = new Reserva('ABC', 'Pelicula1', '2021-11-11', '12:00:00', 1, 'AUTOMOVIL');
     service.crearReserva(dummyReserva).subscribe((respuesta) => {
       expect(respuesta).toEqual(true);
     });
-    const req = httpMock.expectOne(URL)
+    const req = httpMock.expectOne(URL);
     expect(req.request.method).toBe('POST');
-    req.event(new HttpResponse<boolean>({body: true}))
-  })
+    req.event(new HttpResponse<boolean>({body: true}));
+  });
 
 });

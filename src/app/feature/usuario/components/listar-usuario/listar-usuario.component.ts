@@ -19,7 +19,5 @@ export class ListarUsuarioComponent implements OnInit {
   ngOnInit(): void {
     this.listaUsuarios = this.usuarioService.consultar();
   }
-
-  
 }
 

@@ -31,10 +31,9 @@ describe('workspace-project Reserva', () => {
         reserva.ingresarFechaReserva(FECHA_RESERVA);
         reserva.ingresarHoraReserva(HORA_RESERVA);
         reserva.ingresarIdUsuario(NOMBRE_USUARIO);
-        
-        //Expect- Se espera el titulo del popup swal
+        // Expect- Se espera el titulo del popup swal
         expect(reserva.confirmarNoti()).toEqual('Se ha creado la reserva');
-    })
+    });
 
     it('Deberia listar reservas', () => {
         page.navigateTo();
@@ -42,5 +41,6 @@ describe('workspace-project Reserva', () => {
         reserva.clickBotonListarReserva();
 
         expect(32).toBe(reserva.contarReservas());
-    })
-})
+    });
+});
+

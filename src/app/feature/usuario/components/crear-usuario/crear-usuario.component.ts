@@ -36,9 +36,8 @@ export class CrearUsuarioComponent implements OnInit {
   crear(){
     this.servicioUsuario.crear((this.forma.value)).subscribe(data => {
       if (data) {
-        this.success()  
+        this.success();
       }
-      
     });
     this.forma.reset();
   }
@@ -59,10 +58,7 @@ export class CrearUsuarioComponent implements OnInit {
       icon: 'success'
     });
     if (this.notificacion.isVisible()) {
-      console.log('si sirvio el perro');
       enPantalla = true;
-    }else{
-      console.log('No sirvio el hp');
     }
     return enPantalla;
   }

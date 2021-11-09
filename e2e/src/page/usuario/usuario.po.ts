@@ -5,14 +5,10 @@ export class UsuarioPage {
     private linkListarUsuario = element(by.id('linkListarUsuario'));
     private inputNombreUsuario = element(by.id('nombreUsuario'));
     private inputCorreo = element(by.id('correoElectronico'));
-    private btnCrear = element(by.id('btnCrear'))
-    // private aja = element(by.id('swal2-title'))
+    private btnCrear = element(by.id('btnCrear'));
     private listarUsuarios = element(by.css('.list-group-item.list-group-item-action.list-group-item-success'));
 
-    //swal2-popup swal2-toast swal2-icon-success swal2-show primera clase de prueba
-    //swal2-container swal2-center swal2-backdrop-show segunda clase de prueba
-    //swal2-toast-shown swal2-shown tercera clase de prueba
-    // swal2-popup swal2-toast swal2-icon-success swal2-show
+
 
     async clickBotonCrearUsuario() {
         await this.linkCrearUsuario.click();

@@ -6,7 +6,7 @@ import { UsuarioService } from '@usuario/shared/service/usuario.service';
 import { Reserva } from '@reserva/shared/model/reserva';
 import { Usuario } from '@shared/model/usuario';
 
-import Swal  from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { Observable } from 'rxjs';
 
 
@@ -29,7 +29,6 @@ export class CrearReservaComponent implements OnInit {
   listaUsuarios: Observable<Usuario[]>;
   formaReserva: FormGroup;
   titulo = 'Recuerda ingresar todos los datos para poder crear la reserva ^-^';
-  
 
   constructor(private router: ActivatedRoute, protected servicioUsuario: UsuarioService,
   protected servicioReserva: ReservaService, private fb: FormBuilder, private route: Router) { this.crearFormReactiveReserva(); }
@@ -76,7 +75,7 @@ export class CrearReservaComponent implements OnInit {
     this.servicioReserva.crearReserva(new Reserva(this.codigoReserva, this.nombrePelicula, this.formaReserva.value.fechaReserva,
     this.formaReserva.value.horaReserva, this.formaReserva.value.nombreUsuario, this.formaReserva.value.tipoCarro)).subscribe(data => {
       if (data) {
-        this.success()
+        this.success();
       }
       this.generarAleatorio();
     });
@@ -100,10 +99,7 @@ export class CrearReservaComponent implements OnInit {
       icon: 'success'
     });
     if (this.notificacion.isVisible()) {
-      console.log('si sirvio');
       enPantalla = true;
-    }else{
-      console.log('no sirvio');
     }
     return enPantalla;
   }

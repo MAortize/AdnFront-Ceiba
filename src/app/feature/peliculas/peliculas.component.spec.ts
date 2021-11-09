@@ -12,7 +12,7 @@ describe('PeliculasComponent', () => {
   let component: PeliculasComponent;
   let fixture: ComponentFixture<PeliculasComponent>;
   let peliculaService: PeliculasService;
-  const listaPeliculas: Peliculas[] = [new Peliculas('prueba1', 'descripcion xd', 'asdas')]
+  const listaPeliculas: Peliculas[] = [new Peliculas('prueba1', 'descripcion xd', 'asdas')];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -36,7 +36,7 @@ describe('PeliculasComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
     component.peliculas.subscribe(resultado => {
-      expect(1).toBe(resultado.length)
-    })
+      expect(1).toBe(resultado.length);
+    });
   });
 });

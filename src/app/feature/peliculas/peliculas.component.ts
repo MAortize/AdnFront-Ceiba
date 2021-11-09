@@ -17,10 +17,9 @@ export class PeliculasComponent implements OnInit {
   constructor(protected peliculaService: PeliculasService, private router: Router) { }
 
   ngOnInit(): void {
-    this.peliculas=this.peliculaService.consultaPelicula();
+    this.peliculas = this.peliculaService.consultaPelicula();
   }
 
-  
   crearReserva(item: Peliculas){
     let nombrePelicula;
     nombrePelicula = item.title;

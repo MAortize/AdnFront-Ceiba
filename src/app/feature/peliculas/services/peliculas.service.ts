@@ -16,7 +16,7 @@ export class PeliculasService {
   }
 
   private transformarData(response: ResponsePeliculas){
-    let peliculas: Peliculas[] = response.results;
+    const peliculas: Peliculas[] = response.results;
     return peliculas;
   }
 

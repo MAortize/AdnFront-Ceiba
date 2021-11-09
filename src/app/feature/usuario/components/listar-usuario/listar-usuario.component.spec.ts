@@ -38,7 +38,7 @@ describe('ListarUsuarioComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
     component.listaUsuarios.subscribe(resultado => {
-      expect(2).toBe(resultado.length)
-    })
+      expect(2).toBe(resultado.length);
+    });
   });
 });

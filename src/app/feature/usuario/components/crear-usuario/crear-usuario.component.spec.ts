@@ -48,11 +48,10 @@ describe('CrearUsuarioComponent', () => {
     component.forma.controls.correo.setValue('miguel@gmail.com');
     expect(component.forma.valid).toBeTruthy();
 
-    component.crear()
-    
-    //Validamos el resultado deseado(En este caso que el swal se ejecute)
+    component.crear();
+    // Validamos el resultado deseado(En este caso que el swal se ejecute)
     expect(component.notificacion).toBeTruthy();
 
-  })
+  });
 
 });

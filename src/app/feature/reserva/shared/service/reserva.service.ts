@@ -10,8 +10,6 @@ const URL = environment.endpoint + '/reservas';
 export class ReservaService {
 
   constructor(protected http: HttpService) { }
-
-  
   public consultaReserva(){
     return this.http.doGet<Reserva[]>(`${URL}`, this.http.optsName('Listar Reservas'));
   }

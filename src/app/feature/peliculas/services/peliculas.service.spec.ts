@@ -24,17 +24,17 @@ describe('PeliculasService', () => {
     expect(peliculaService).toBeTruthy();
   });
 
-it('deberia listar peliculas', () => {
-  const dummyPeliculas = [
+  it('deberia listar peliculas', () => {
+    const dummyPeliculas = [
     new Peliculas('prueba1', 'descripcion xd', 'asdas')
   ];
-  service.consultaPelicula().subscribe((peliculas:Peliculas[]) => {
+    service.consultaPelicula().subscribe((peliculas: Peliculas[]) => {
     expect(peliculas.length).toBe(1);
     expect(peliculas).toEqual(dummyPeliculas);
   });
-  const req = httpMock.expectOne(environment.endpointPeliculas);
-  expect(req.request.method).toBe('GET');
-  req.flush(dummyPeliculas)
+    const req = httpMock.expectOne(environment.endpointPeliculas);
+    expect(req.request.method).toBe('GET');
+    req.flush(dummyPeliculas);
 });
 
 });
