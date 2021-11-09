@@ -7,7 +7,7 @@ export class UsuarioPage {
     private inputCorreo = element(by.id('correoElectronico'));
     private btnCrear = element(by.id('btnCrear'))
     // private aja = element(by.id('swal2-title'))
-    private listarUsuarios = element.all(by.css('app-listar-usuarios li'));
+    private listarUsuarios = element(by.css('.list-group-item.list-group-item-action.list-group-item-success'));
 
     //swal2-popup swal2-toast swal2-icon-success swal2-show primera clase de prueba
     //swal2-container swal2-center swal2-backdrop-show segunda clase de prueba

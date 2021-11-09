@@ -35,4 +35,12 @@ describe('workspace-project Reserva', () => {
         //Expect- Se espera el titulo del popup swal
         expect(reserva.confirmarNoti()).toEqual('Se ha creado la reserva');
     })
+
+    it('Deberia listar reservas', () => {
+        page.navigateTo();
+        navBar.clickBotonReservas();
+        reserva.clickBotonListarReserva();
+
+        expect(32).toBe(reserva.contarReservas());
+    })
 })
