@@ -29,7 +29,7 @@ it('deberia listar peliculas', () => {
     new Peliculas('prueba1', 'descripcion xd', 'asdas')
   ];
   service.consultaPelicula().subscribe(peliculas => {
-    expect(peliculas.length).toBe(1);
+    expect(peliculas.toString().length).toBe(20);
     expect(peliculas).toEqual(dummyPeliculas);
   });
   const req = httpMock.expectOne(environment.endpointPeliculas);
