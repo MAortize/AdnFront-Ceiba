@@ -36,7 +36,7 @@ describe('UsuarioService', () => {
     ];
     service.consultar().subscribe(usuarios => {
       expect(usuarios.length).toBe(1);
-      expect(usuarios).toEqual(dummyUsuario)
+      expect(usuarios).toEqual(dummyUsuario);
     });
     const req = httpMock.expectOne(URL);
     expect(req.request.method).toBe('GET');
