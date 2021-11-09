@@ -31,5 +31,8 @@ describe('workspace-project Reserva', () => {
         reserva.ingresarFechaReserva(FECHA_RESERVA);
         reserva.ingresarHoraReserva(HORA_RESERVA);
         reserva.ingresarIdUsuario(NOMBRE_USUARIO);
+        
+        //Expect- Se espera el titulo del popup swal
+        expect(reserva.confirmarNoti()).toEqual('Se ha creado la reserva');
     })
 })

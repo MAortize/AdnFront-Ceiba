@@ -1,5 +1,5 @@
 <div class="container">
-    <form [formGroup]='forma' (ngSubmit)="crear()" autocomplete="off">
+    <form id="" [formGroup]='forma' autocomplete="off">
         <div class="form-row padre">
             <div class="col-md-6 mb-3">
                 <label for="nombreUsuario">Nombre</label>
@@ -15,7 +15,7 @@
             </div>
         </div>
         <div class="mx-auto" style="width: 200px;">
-            <button [disabled]="!forma.valid" class="btn btn-primary btn-block" type="submit">Crear Usuario</button>
+            <button id="btnCrear" (click)="crear()" [disabled]="!forma.valid" class="btn btn-primary btn-block" type="submit">Crear Usuario</button>
         </div>
     </form>
 </div>

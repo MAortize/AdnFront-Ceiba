@@ -5,9 +5,14 @@ export class UsuarioPage {
     private linkListarUsuario = element(by.id('linkListarUsuario'));
     private inputNombreUsuario = element(by.id('nombreUsuario'));
     private inputCorreo = element(by.id('correoElectronico'));
+    private btnCrear = element(by.id('btnCrear'))
+    // private aja = element(by.id('swal2-title'))
     private listarUsuarios = element.all(by.css('app-listar-usuarios li'));
 
-
+    //swal2-popup swal2-toast swal2-icon-success swal2-show primera clase de prueba
+    //swal2-container swal2-center swal2-backdrop-show segunda clase de prueba
+    //swal2-toast-shown swal2-shown tercera clase de prueba
+    // swal2-popup swal2-toast swal2-icon-success swal2-show
 
     async clickBotonCrearUsuario() {
         await this.linkCrearUsuario.click();
@@ -25,7 +30,15 @@ export class UsuarioPage {
         await this.inputCorreo.sendKeys(correo);
     }
 
+    async confirmarCrear(){
+        await this.btnCrear.click();
+    }
+
     async contarUsuarios() {
         return this.listarUsuarios.count();
+    }
+
+    async confirmarNoti(){
+        return element(by.css('.swal2-popup.swal2-toast .swal2-title')).getText();
     }
 }

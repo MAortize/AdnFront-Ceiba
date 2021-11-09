@@ -32,5 +32,9 @@ export class ReservaPage {
         await this.inputIdUsuario.sendKeys(idUsuario);
     }
 
+    async confirmarNoti(){
+        return element(by.css('.swal2-popup.swal2-toast .swal2-title')).getText();
+    }
+
 
 }

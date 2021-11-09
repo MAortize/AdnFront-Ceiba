@@ -23,5 +23,8 @@ describe('workspace-project Usuario', () => {
         usuario.clickBotonCrearUsuario();
         usuario.ingresarNombre(NOMBRE_USUARIO);
         usuario.ingresarCorreo(CORREO);
+
+        //Expect- Se espera el titulo del popup swal
+        expect(usuario.confirmarNoti()).toEqual('Se ha creado el usuario');
     });
 });
