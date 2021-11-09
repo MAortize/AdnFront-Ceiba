@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core/services/http.service';
+import { ResponsePeliculas } from '@shared/model/responsePelicula';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Peliculas } from '../model/pelicula';
@@ -11,11 +12,12 @@ export class PeliculasService {
 
 
   public consultaPelicula(){
-    return this.http.doGet<Peliculas[]>(`${environment.endpointPeliculas}`).pipe(map(this.transformarData));
+    return this.http.doGet<ResponsePeliculas>(`${environment.endpointPeliculas}`).pipe(map(this.transformarData));
   }
 
-  private transformarData(response: any){
-    return response.results;
+  private transformarData(response: ResponsePeliculas){
+    let peliculas: Peliculas[] = response.results;
+    return peliculas;
   }
 
 
