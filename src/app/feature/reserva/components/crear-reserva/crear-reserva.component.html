@@ -34,7 +34,7 @@
             <div class="col-md-6 mb-3">
                 <label for="idUsuario">Usuario</label>
                 <select formControlName="nombreUsuario" class="custom-select" name="idUsuario" id="idUsuario" [class.is-invalid]="nombreUsuarioNoValido">
-                    <option *ngFor="let item of listaUsuarios" [value]="item.idUsuario">{{item.nombre}}</option>
+                    <option *ngFor="let item of listaUsuarios|async" [value]="item.idUsuario">{{item.nombre}}</option>
                 </select>
                 <small *ngIf="nombreUsuarioNoValido" class="text-danger">El nombre del usuario debe ser seleccionado</small>
             </div>

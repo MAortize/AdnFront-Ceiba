@@ -2,16 +2,4 @@
 <div class="padre">
     <button class="btn btn-success" id="linkListarReserva" routerLink="./listar" routerLinkActive="active">Ver reservas</button>
 </div>
-<div class="container mt-3">
-    <div class="row row-cols-1 row-cols-md-3 animated fadeIn">
-        <div id="crearReserva" (click)="crearReserva(items)" *ngFor="let items of peliculas" class="col mb-4">
-            <div class="card puntero">
-                <img [src]='"https://image.tmdb.org/t/p/w500"+items.poster_path' class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{items.title}}</h5>
-                    <p class="card-text">{{items.overview}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<app-peliculas></app-peliculas>

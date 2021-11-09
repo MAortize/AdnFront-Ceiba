@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Reserva } from '@reserva/shared/model/reserva';
 import { ReservaService } from '@reserva/shared/service/reserva.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-listar-reservas',
@@ -9,18 +10,13 @@ import { ReservaService } from '@reserva/shared/service/reserva.service';
   ]
 })
 export class ListarReservasComponent implements OnInit {
-  public listaReserva: Reserva[] = [];
+  public listaReserva: Observable<Reserva[]>;
 
   constructor(protected reservaService: ReservaService) { }
 
   ngOnInit(): void {
-    this.listarReserva();
+    this.listaReserva = this.reservaService.consultaReserva();
   }
 
-  listarReserva(){
-    this.reservaService.consultaReserva().subscribe(data => {
-      this.listaReserva = data;
-    });
-  }
 
 }

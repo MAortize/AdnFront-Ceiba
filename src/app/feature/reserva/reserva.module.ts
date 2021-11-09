@@ -10,6 +10,8 @@ import { ReservaService } from './shared/service/reserva.service';
 import { LayoutReservaComponent } from './components/layout-reserva/layout-reserva.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from '@usuario/shared/service/usuario.service';
+import { PeliculasComponent } from '../peliculas/peliculas.component';
+import { PeliculasService } from '../peliculas/services/peliculas.service';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import { UsuarioService } from '@usuario/shared/service/usuario.service';
     ReservaComponent,
     CrearReservaComponent,
     ListarReservasComponent,
-    LayoutReservaComponent
+    LayoutReservaComponent,
+    PeliculasComponent
   ],
   imports: [
     ReservaRoutingModule,
@@ -25,6 +28,6 @@ import { UsuarioService } from '@usuario/shared/service/usuario.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ReservaService, UsuarioService]
+  providers: [ReservaService, UsuarioService, PeliculasService]
 })
 export class ReservaModule { }

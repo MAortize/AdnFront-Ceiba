@@ -6,7 +6,9 @@ import { UsuarioService } from '@usuario/shared/service/usuario.service';
 import { Reserva } from '@reserva/shared/model/reserva';
 import { Usuario } from '@shared/model/usuario';
 
-import Swal from 'sweetalert2';
+import Swal  from 'sweetalert2';
+import { Observable } from 'rxjs';
+
 
 
 @Component({
@@ -17,11 +19,17 @@ import Swal from 'sweetalert2';
 })
 export class CrearReservaComponent implements OnInit {
 
+
+  notificacion = Swal.mixin({
+    toast: true,
+    position: 'center'
+  });
   nombrePelicula: string;
   codigoReserva: string;
-  listaUsuarios: Usuario[] = [];
+  listaUsuarios: Observable<Usuario[]>;
   formaReserva: FormGroup;
   titulo = 'Recuerda ingresar todos los datos para poder crear la reserva ^-^';
+  
 
   constructor(private router: ActivatedRoute, protected servicioUsuario: UsuarioService,
   protected servicioReserva: ReservaService, private fb: FormBuilder, private route: Router) { this.crearFormReactiveReserva(); }
@@ -31,6 +39,7 @@ export class CrearReservaComponent implements OnInit {
       this.generarAleatorio();
     });
     this.obtenerTodosLosUsuarios();
+    this.crearFormReactiveReserva();
   }
 
   get tipoCarroNoValido(){
@@ -51,9 +60,7 @@ export class CrearReservaComponent implements OnInit {
 
 
   obtenerTodosLosUsuarios(){
-    this.servicioUsuario.consultar().subscribe(data => {
-      this.listaUsuarios = data;
-    });
+    this.listaUsuarios = this.servicioUsuario.consultar();
   }
 
   crearFormReactiveReserva(){
@@ -68,16 +75,10 @@ export class CrearReservaComponent implements OnInit {
   agregar(){
     this.servicioReserva.crearReserva(new Reserva(this.codigoReserva, this.nombrePelicula, this.formaReserva.value.fechaReserva,
     this.formaReserva.value.horaReserva, this.formaReserva.value.nombreUsuario, this.formaReserva.value.tipoCarro)).subscribe(data => {
-        Swal.fire({
-          title: 'Se creo la reserva con el id',
-          text: data['valor'].toString(),
-          icon: 'success'
-        });
-        this.generarAleatorio();
-    }, e => {
-        Swal.fire({title: e.error.mensaje,
-          text: '',
-          icon: 'error'});
+      if (data) {
+        this.success()
+      }
+      this.generarAleatorio();
     });
     this.formaReserva.reset();
   }
@@ -89,6 +90,22 @@ export class CrearReservaComponent implements OnInit {
     for (let i = 0; i < parada; i++) {
       this.codigoReserva += characters.charAt(Math.floor(Math.random() * characters.length));
     }
+  }
+
+  success(){
+    let enPantalla = false;
+    this.notificacion.fire({
+      title: 'Se ha creado la reserva',
+      text: '^-^',
+      icon: 'success'
+    });
+    if (this.notificacion.isVisible()) {
+      console.log('si sirvio');
+      enPantalla = true;
+    }else{
+      console.log('no sirvio');
+    }
+    return enPantalla;
   }
 
   volver(){

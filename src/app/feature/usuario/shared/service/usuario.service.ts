@@ -15,6 +15,6 @@ export class UsuarioService {
   }
 
   public crear(usuario: Usuario){
-    return this.http.doPost(`${URL}`, usuario);
+    return this.http.doPost<Usuario, boolean>(`${URL}`, usuario);
   }
 }
