@@ -26,6 +26,7 @@ export class CrearUsuarioComponent implements OnInit {
 
   get nombreNoValido(){
     return this.forma.get('nombre').invalid && this.forma.get('nombre').touched;
+    
   }
 
   get correoNoValido(){
@@ -40,7 +41,11 @@ export class CrearUsuarioComponent implements OnInit {
       }
     });
     this.forma.reset();
+
+    
   }
+
+  
 
 
   crearFormReactive(){

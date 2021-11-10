@@ -10,6 +10,7 @@ export class ReservaPage {
     private inputHoraReserva = element(by.id('horaReserva'));
     private inputIdUsuario = element(by.id('idUsuario'));
     private listarReservas = element(by.css('.list-group-item.list-group-item-action.list-group-item-success'));
+    
     async clickBotonCrearReserva() {
         await this.linkCrearReserva.click();
     }
